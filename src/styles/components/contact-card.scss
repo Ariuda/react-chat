@@ -1,0 +1,23 @@
+.contact-card-container {
+    margin: 10px 20px 10px 0px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    & > div {
+        padding: 20px 0px;
+        border-bottom: 2px solid #9A8C98;
+        .card-img {
+            background: #C9ADA7;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        a {
+            @include theme-aware('color', 'lines-focus');
+        }
+    }
+    & > div:last-of-type {
+        border-bottom: none;
+    }
+}
