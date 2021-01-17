@@ -42,6 +42,10 @@ class Chat extends React.Component {
         scrollBar.scrollTop = scrollBar.scrollHeight;
     }
 
+    componentWillUnmount() {
+        console.log('bye');
+    }
+
     onInputChange = (input, name) => {
         this.setState({ [name]: input });
     };

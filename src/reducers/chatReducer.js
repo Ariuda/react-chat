@@ -13,6 +13,8 @@ export default (state = {}, action) => {
             return { ...state, ...chats };
         case 'FETCH_CHAT':
             return { ...state, [action.payload.chatId]: action.payload };
+        case 'ADD_CHAT':
+            return { ...state, [action.payload.chatId]: action.payload };
         case 'ADD_MESSAGE':
             return { ...state, [action.payload.chatId]: action.payload };
         default:

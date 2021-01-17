@@ -50,22 +50,6 @@ class Settings extends React.Component {
         setTimeout(() => {
             this.setState({ modal: 'not-active' });
         }, 1500);
-        /*const response = await this.props.settings({
-            username: this.state.username,
-            beFound: this.state.beFound,
-            theme: this.state.theme,
-        });
-        if (response === undefined) {
-            this.setState({ modal: 'active', modalText: 'Your settings have been changed' });
-            setTimeout(() => {
-                this.setState({ modal: 'not-active' });
-            }, 1500);
-        } else if (response !== undefined) {
-            this.setState({ modal: 'active', modalText: response });
-            setTimeout(() => {
-                this.setState({ modal: 'not-active' });
-            }, 1500);
-        }*/
     };
 
     render() {

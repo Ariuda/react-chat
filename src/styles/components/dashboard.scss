@@ -14,5 +14,14 @@
     & > div {
         width: 100%;
         margin-bottom: 30px;
+        margin: 10px;
+        transition: all .5s;
+        @media (min-width: 768px) {
+            padding: 20px 30px;
+            &:hover {
+                @include theme-aware('background-color', 'focus');
+                box-shadow: 9px 9px 6px 1px #f1f1f103;
+            }
+        }   
     }
 }

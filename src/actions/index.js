@@ -6,6 +6,10 @@ export const signIn = (email, password) => async (dispatch) => {
         const response = await chats.post('/sign-in', { email, password });
         dispatch({ type: 'SIGN_IN', payload: response.data });
         history.push('/');
+        localStorage.setItem('userId', response.data.userId);
+        localStorage.setItem('theme', response.data.theme);
+        localStorage.setItem('beFound', response.data.beFound);
+        localStorage.setItem('username', response.data.username);
     } catch (err) {
         throw new Error('login failed');
     }
@@ -21,6 +25,11 @@ export const register = (username, email, password) => async (dispatch) => {
     }
 };
 
+export const signOut = () => (dispatch) => {
+    dispatch({ type: 'SIGN_OUT' });
+    localStorage.clear();
+}
+
 export const settings = (formValues) => async (dispatch, getState) => {
     try {
         const { userId } = getState().auth;
@@ -29,12 +38,6 @@ export const settings = (formValues) => async (dispatch, getState) => {
     } catch (err) {
         throw new Error('something went wrong');
     }
-};
-
-export const createMessage = (message, chatId) => async (dispatch, getState) => {
-    const { userId } = getState().auth;
-    const response = await chats.post(`/${userId}/chat/${chatId}`, { ...message, user: userId });
-    dispatch({ type: 'ADD_MESSAGE', payload: response.data });
 };
 
 export const fetchChats = () => async (dispatch, getState) => {
@@ -53,3 +56,22 @@ export const fetchChat = (chatId) => async (dispatch, getState) => {
         throw new Error('something went wrong');
     }
 };
+
+export const createChat = (user) => async (dispatch, getState) => {
+    try {
+        const { userId } = getState().auth;
+        const response = await chats.post(`/${userId}/new-chat/${user}`);
+        dispatch({ type: 'ADD_CHAT', payload: response.data });
+        history.push(`/chat/${response.data.chatId}`);
+    } catch(err) {
+        throw new Error('something went wrong');
+    }
+}
+
+export const createMessage = (message, chatId) => async (dispatch, getState) => {
+    const { userId } = getState().auth;
+    const response = await chats.post(`/${userId}/chat/${chatId}`, { ...message, user: userId });
+    dispatch({ type: 'ADD_MESSAGE', payload: response.data });
+};
+
+

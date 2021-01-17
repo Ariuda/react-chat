@@ -2,8 +2,9 @@
     width: 100%;
     text-align: center;
     button {
-        @include theme-aware('background-color', 'lines-focus');
-        color: #FAFAFA;
+        @include theme-aware('background-color', 'highlights');
+        @include theme-aware('color', 'font');
+        //color: #FAFAFA;
         border-radius: 30px;
         padding: 15px 32px;
         font-size: 18px;

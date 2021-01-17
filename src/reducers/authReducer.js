@@ -23,6 +23,14 @@ export default (state = authState, action) => {
                 theme: action.payload.theme,
                 beFound: action.payload.beFound,
             };
+        case 'SIGN_OUT':
+            return {
+                ...state,
+                username: '',
+                userId: null,
+                theme: 'light',
+                beFound: null,
+            }
         case 'UPDATE_SETTINGS':
             return {
                 ...state,

@@ -21,12 +21,14 @@ body {
 h1 {
     margin: 60px 0px 0px 0px;
     text-align: center;
-    @include theme-aware('color', 'lines-focus');
+    @include theme-aware('color', 'font');
+    font-weight: 400;
+    font-size: $xl-size;
     /*color: #7D84B2;*/
 }
 
 h2, a {
-    @include theme-aware('color', 'lines-focus');
+    @include theme-aware('color', 'font');
 }
 
 

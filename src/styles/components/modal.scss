@@ -9,7 +9,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(201, 201, 201, 0.658);
+        background-color: rgba(37, 37, 37, 0.658);
         .modal-box {
             position: absolute;
             width: fit-content;
@@ -20,6 +20,7 @@
             border-radius: 10px;
             padding: 30px;
             text-align: center;
+            color: black;
         }
     }
 }

@@ -1,8 +1,15 @@
 .chat {
     max-width: 500px;
-    margin: 100px auto 0px auto;
+    margin: 85px auto 0px auto;
     position: relative;
-    height: 80vh;
+    height: 70vh;
+    @media (min-width: 768px) {
+        @include theme-aware('background-color', 'focus');
+        padding: 40px;
+        h1 {
+            margin: 0px;
+        }
+    }
     .chat-wrapper {
         height: 45vh;
         overflow-y: auto;
@@ -12,7 +19,7 @@
             height: 58px;
             margin-bottom: 5px;
             .message {
-                background-color: #ffffff;
+                @include theme-aware('background-color', 'lines-focus');
                 width: fit-content;
                 min-width: 100px;
                 padding: 20px;

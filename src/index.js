@@ -11,6 +11,14 @@ import './styles/index.scss';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     reducers,
+    { 
+        auth: { 
+            userId: localStorage.getItem('userId'),
+            theme: localStorage.getItem('theme'),
+            beFound: localStorage.getItem('beFound'),
+            username: localStorage.getItem('username')
+        }
+    },
     composeEnhancers(applyMiddleware(reduxThunk))
 );
 

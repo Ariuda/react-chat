@@ -8,6 +8,8 @@ import Settings from './pages/Settings';
 import Dashboard from './pages/Dashboard';
 import Chat from './pages/Chat';
 import history from '../history';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 const App = () => {
     return (
@@ -16,11 +18,11 @@ const App = () => {
                 <div>
                     <Nav />
                     <Switch>
-                        <Route path="/" exact component={Dashboard} />
-                        <Route path="/sign-in" component={SignIn} />
-                        <Route path="/register" component={Register} />
-                        <Route path="/settings" component={Settings} />
-                        <Route path="/chat/:chatId" exact component={Chat} />
+                        <PrivateRoute path="/" exact component={Dashboard} />
+                        <PublicRoute path="/sign-in" component={SignIn} />
+                        <PublicRoute path="/register" component={Register} />
+                        <PrivateRoute path="/settings" component={Settings} />
+                        <PrivateRoute path="/chat/:chatId" exact component={Chat} />
                     </Switch>
                 </div>
             </Router>

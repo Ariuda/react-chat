@@ -1,20 +1,21 @@
 .contact-card-container {
     margin: 10px 20px 10px 0px;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
+    padding: 30px 0px;
+    //background-color: #ffffff;
+    //@include theme-aware('background-color', 'focus');
+    //border-radius: 10px;
     & > div {
         padding: 20px 0px;
-        border-bottom: 2px solid #9A8C98;
+        border-bottom: 2px solid #FAFAFA;
         .card-img {
-            background: #C9ADA7;
+            background: #FAFAFA;
             width: 30px;
             height: 30px;
             border-radius: 50%;
             margin-right: 20px;
         }
         a {
-            @include theme-aware('color', 'lines-focus');
+            @include theme-aware('color', 'font');
         }
     }
     & > div:last-of-type {

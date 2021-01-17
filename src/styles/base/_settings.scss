@@ -1,31 +1,50 @@
+$spotty-background: linear-gradient(250deg, rgba(58, 20, 20, 0.8), rgba(191, 191, 191, 0) 59.71%), 
+                    linear-gradient(180deg, rgb(16, 20, 41), rgba(183, 110, 0, 0) 150.71%), 
+                    linear-gradient(362deg, rgb(3, 0, 33), rgba(0, 0, 255, 0) 142.71%);
+
+
+$sm-size: 14px;
+$md-size: 18px;
+$lg-size: 22px;
+$xl-size: 36px;
+
 $themes: (
     light: (
-        background: #F2E9E4,
-        font: #22223B,
-        lines: #9A8C98,
-        lines-focus: #4A4E69,
-        highlights: #C9ADA7
+        //background: #F2E9E4,
+        background: linear-gradient(135deg, #614385, #516395),
+        //font: #22223B,
+        font: #FAFAFA,
+        //lines: #9A8C98,
+        lines: #FAFAFA,
+        lines-focus: #ffffff18,
+        focus: #ffffff18,
+        //highlights: #C9ADA7
+        highlights: #00000049
     ),
     dark: (
-        background: #22223B,
-        font: #F2E9E4,
+        background: #211E27,
+        font: #FAFAFA,
         lines: #4A4E69,
-        lines-focus: #C9ADA7,
-        highlights: #9A8C98
+        lines-focus: #b5a0ce30,
+        focus: #ffffff0a,
+        highlights: #614385
     ),
     sleek: (
-        background: #FAFAFA,
-        font: #1F1F1F,
+        //background: #FAFAFA,
+        background: $spotty-background,
+        font: #FAFAFA,
         lines: #6D222F,
-        lines-focus: #485470,
-        highlights: #D6D6D6
+        lines-focus: #ffffff18,
+        focus: #ffffff18,
+        highlights: #291321
     ),
     colourful: (
-        background: #F2E9E4,
-        font: #8E7DBE,
+        background: linear-gradient(135deg, #AC3F5D, #E59E77),
+        font: #FAFAFA,
         lines: #99C1B9,
-        lines-focus: #D88C9A,
-        highlights: #F2D0A9
+        lines-focus: #7630467e,
+        focus: #ffffff18,
+        highlights: #763046
     )
 );
 

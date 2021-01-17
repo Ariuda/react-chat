@@ -36,8 +36,8 @@
             }
         }
         input[type="radio"]:checked+label {
-            @include theme-aware('background', 'font');
-            @include theme-aware('color', 'background');
+            @include theme-aware('background', 'highlights');
+            @include theme-aware('color', 'font');
         }
     }
 }

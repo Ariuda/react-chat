@@ -11,6 +11,7 @@ const FormInput = ({ label, type, value, name, onChange, touched }) => {
                 name={name}
                 onChange={(e) => onChange(e.target.value, name)}
                 onClick={(e) => setActive('touched')}
+                autoComplete="off"
             />
             <label className={active}>{label}</label>
         </div>
